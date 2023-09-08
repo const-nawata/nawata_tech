@@ -1,2 +1,2 @@
 <?php
-echo 'Test App Links';
+echo 'Test Nawata tech testing';
