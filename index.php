@@ -3,18 +3,22 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <title>FRotor</title>
+    <title>Nawata</title>
 
-<!--    <link rel="stylesheet" href="public/css/main.css" type="text/css" />-->
+    <link rel="stylesheet" href="public/css/main.css" type="text/css" />
 
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-<!--    <script type="text/javascript" src="public/js/main.js"></script>-->
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!--    <script type="text/javascript" src="public/js/main.js"></script>-->
 </head>
 
 <body>
 
-<table class="main-tbl">
-    <tr>
+<div class="site-title">
+    Site to test App links in Flutter project
+</div>
+
+<!--<table class="main-tbl">-->
+<!--    <tr>-->
 <!--        <td class="control-td"><button class="next-btn" id="next_facet_btn" onclick="getNextFaucet();">Next</button></td>-->
 <!--        <td id="id_td" class="db-id-td hided" >id:&nbsp;undefined</td>-->
 
@@ -28,16 +32,22 @@
 <!--            <input type="text" id="priority" name="priority" class="time-inp" />-->
 <!--        </td>-->
 
-        <td class="num-info-td">
-            New test index file <span id="n_all_span">Test span</span> / <span id="n_active_span"></span>
-            <span id="last_payment" class="last-payment"></span>
-        </td>
+<!--        <td class="num-info-td">-->
+<!--            New test index file <span id="n_all_span"></span> / <span id="n_active_span"></span>-->
+<!--            <span id="last_payment" class="last-payment"></span>-->
+<!--        </td>-->
+
+<!---->
+<!--        <td>-->
+<!--            <div class="site-title">Site to test App links in Flutter project</div>-->
+<!--        </td>-->
+
 
 <!--        <td id="refresh_td" class="control-td hided"><button id="refresh_btn" onclick="refresh();">Refresh</button></td>-->
 <!--        <td id="disable_td" class="control-td hided"><button id="disable_btn" onclick="disableFaucet();">Disable</button></td>-->
 <!--        <td class="control-td"><button id="enable_all_btn" onclick="enableAll();">Enable&nbsp;All</button></td>-->
 
-    </tr>
+<!--    </tr>-->
 
 <!--    <tr>-->
 <!--        <td colspan="8"class="frame-td">-->
@@ -45,7 +55,7 @@
 <!--        </td>-->
 <!--    </tr>-->
 
-</table>
+<!--</table>-->
 
 </body>
 
