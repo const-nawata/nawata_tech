@@ -29,7 +29,7 @@
 <!--        </td>-->
 
         <td class="num-info-td">
-            New test index file <span id="n_all_span"></span> / <span id="n_active_span"></span>
+            New test index file <span id="n_all_span">Test span</span> / <span id="n_active_span"></span>
             <span id="last_payment" class="last-payment"></span>
         </td>
 
