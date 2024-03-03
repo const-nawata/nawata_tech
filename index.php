@@ -13,21 +13,8 @@
 
 <?php
 require_once 'pages/photo.php';
-
-$json_val = json_encode([
-    'posts' => 'posts',
-    'int' => 15,
-    'dbl' => 58.525,
-]);
-
-file_put_contents('images.json', json_encode($json_val));
-
-
 ?>
-
-
 </body>
-
 
 <script type="text/javascript">
 
@@ -39,6 +26,19 @@ file_put_contents('images.json', json_encode($json_val));
         $('#add_image_btn').on('click', function () {
             console.log('SS value is ' + ss)
             ss++;
+
+            $.ajax({
+                type: "GET",
+                url: "save_image.php",
+                data: {h: "michael"},
+                success: function () {
+                    location.reload();
+                }
+            });
+
+
+            console.log('SS value is ' + ss)
+
 
             // var order = {
             //     name: $('#name').val(),
