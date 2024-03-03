@@ -1,2 +1,8 @@
-# nawata_tech
-nawata_tech at Hostinger
+# My Photos
+## Site data
+### Provider
+https://www.hostinger.com
+### Site URL
+https://const-nawata.tech/
+### Image
+* **Size ratio:** 3x2
