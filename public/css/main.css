@@ -58,6 +58,7 @@ button:disabled {
 
 .site-title {
     margin-top: 40px;
+    margin-bottom: 40px;
     width: 100%;
     color: #150977;
     font-size: 30px;
