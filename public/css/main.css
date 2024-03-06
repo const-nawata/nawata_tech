@@ -56,9 +56,20 @@ button:disabled {
     opacity: 0.5;
 }
 
+.image-host {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, serif;
+    text-align: center;
+}
+
 .site-title {
     margin-top: 40px;
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
     width: 100%;
     color: #150977;
     font-size: 30px;

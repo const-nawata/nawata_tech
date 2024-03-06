@@ -1,4 +1,3 @@
-<?php ?>
 <div style="text-align: center;">
     <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=660"
          alt="image00000" width="300">
@@ -10,4 +9,3 @@
          alt="Нещастя" width="300"">
 </div>
 
-<?php ?>

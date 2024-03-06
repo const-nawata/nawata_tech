@@ -6,54 +6,50 @@
     <link rel="stylesheet" href="public/css/main.css" type="text/css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <body>
-<div class="site-title">Our Photos&nbsp;&nbsp;&nbsp;<button type="button" id="add_image_btn">
-        Додати
-    </button>
+<div class="site-title">Our Photos&nbsp;&nbsp;&nbsp;
+
+
 </div>
+
+<div class="image-host">
+    <label for="host">HOST</label>
+    <input type="text" id="host" name="host" size="50">
+    <button type="button" id="add_image_btn">Додати</button>
+</div>
+
 
 <?php
 require_once 'pages/photo.php';
+
+$fl_cont = file_get_contents('images.json');
+$data_s = json_decode($fl_cont);
+$data_s2 = json_decode($data_s, true);
+
+print_r('File: ' . $fl_cont);
+print_r('<br>');
+print_r('JSON: ' . $data_s2['host']);
 ?>
+
+
 </body>
 
 <script type="text/javascript">
-
-    let ss = 0;
-
-
     $(document).ready(function () {
-
         $('#add_image_btn').on('click', function () {
-            console.log('SS value is ' + ss)
-            ss++;
+            console.log('host2: empty');
+
+            let host = document.getElementById("host").value;
+
+            console.log('host: ' + host);
 
             $.ajax({
                 type: "GET",
                 url: "save_image.php",
-                data: {h: "michael"},
+                data: {host: host},
                 success: function () {
                     location.reload();
                 }
             });
-
-
-            console.log('SS value is ' + ss)
-
-
-            // var order = {
-            //     name: $('#name').val(),
-            //     grade: $('#grade').val(),
-            // }
-            // $.ajax({
-            //     type: 'POST',
-            //     url: 'json.php',
-            //     data: order,
-            //     success: function (newStudent) {
-            //         console.log("Success");
-            //         $("#students").append(setStudents($('#name').val(), $('#grade').val()));
-            //
-            //     }
-            // })
         });
     });
 </script>
