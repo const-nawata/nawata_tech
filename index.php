@@ -19,18 +19,16 @@ require_once 'pages/photo.php';
 
 if (!file_exists('images.json')) {
     $images_data = [];
-    $json_val = json_encode($images_data);
-    file_put_contents('images.json', json_encode($json_val));
+    file_put_contents('images.json', json_encode($images_data));
 }
 
 //$stack = ["orange", "banana"];
 //$stack[] = "orange";
 //$stack[] = "raspberry";
 //print_r($stack);
-
+//
 //$file_content = file_get_contents('images.json');
-//$images_data = json_decode($file_content);
-//$images_data = json_decode($images_data, true);
+//$images_data = json_decode($file_content, true);
 //
 //print_r("<br><br>File: {$file_content}<br><br>");
 //
@@ -45,14 +43,17 @@ if (!file_exists('images.json')) {
 //print_r('QUERY: ' . $url_data['query'] . '<br><br>');
 //
 //parse_str($url_data['query'], $query);
-//print_r('WIDTH: ' . $query['width'] . '<br>HEIGHT: ' . $query['height'] . '<br><br>');
+//
+//
+//print_r('WIDTH: ' . $images_data[0]['width'] . '<br>HEIGHT: ' . $images_data[0]['height'] . '<br><br>');
 //
 //$url_main =
 //    $url_data['scheme'] . '://' . $url_data['host'] . $url_data['path'] . '?resid=' . urlencode($query['resid']) . '&authkey=' . urlencode($query['authkey']);
 //
 //print_r('URL: <br>' . $images_data[0]['host'] . '<br>');
 //print_r($url_main);
-//?>
+
+?>
 
 
 </body>
@@ -63,7 +64,6 @@ if (!file_exists('images.json')) {
             console.log('host2: empty');
 
             let host = $("#host").val();
-
             console.log('host: ' + host);
 
             $.ajax({
