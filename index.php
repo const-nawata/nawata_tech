@@ -15,12 +15,12 @@
 </div>
 
 <?php
-require_once 'pages/photo.php';
-
 if (!file_exists('images.json')) {
     $images_data = [];
     file_put_contents('images.json', json_encode($images_data));
 }
+
+require_once 'pages/photo.php';
 
 //$stack = ["orange", "banana"];
 //$stack[] = "orange";
