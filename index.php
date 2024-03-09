@@ -17,28 +17,42 @@
 <?php
 require_once 'pages/photo.php';
 
-$file_content = file_get_contents('images.json');
-$images_data = json_decode($file_content);
-$images_data = json_decode($images_data, true);
+if (!file_exists('images.json')) {
+    $images_data = [];
+    $json_val = json_encode($images_data);
+    file_put_contents('images.json', json_encode($json_val));
+}
 
-print_r("<br><br>File: {$file_content}<br><br>");
+//$stack = ["orange", "banana"];
+//$stack[] = "orange";
+//$stack[] = "raspberry";
+//print_r($stack);
 
-$url_data = parse_url($images_data['host']);
-
-print_r('SCHEME: ' . $url_data['scheme'] . '<br>');
-print_r('HOST: ' . $url_data['host'] . '<br>');
-print_r('PATH: ' . $url_data['path'] . '<br>');
-print_r('QUERY: ' . $url_data['query'] . '<br><br>');
-
-parse_str($url_data['query'], $query);
-print_r('WIDTH: ' . $query['width'] . '<br>HEIGHT: ' . $query['height'] . '<br><br>');
-
-$url_main =
-    $url_data['scheme'] . '://' . $url_data['host'] . $url_data['path'] . '?resid=' . urlencode($query['resid']) . '&authkey=' . urlencode($query['authkey']);
-
-print_r('URL: <br>' . $images_data['host'] . '<br>');
-print_r($url_main);
-?>
+//$file_content = file_get_contents('images.json');
+//$images_data = json_decode($file_content);
+//$images_data = json_decode($images_data, true);
+//
+//print_r("<br><br>File: {$file_content}<br><br>");
+//
+//$count = count($images_data);
+//
+//$url_data = parse_url($images_data[0]['host']);
+//
+//print_r('Count: ' . $count . '<br>');
+//print_r('SCHEME: ' . $url_data['scheme'] . '<br>');
+//print_r('HOST: ' . $url_data['host'] . '<br>');
+//print_r('PATH: ' . $url_data['path'] . '<br>');
+//print_r('QUERY: ' . $url_data['query'] . '<br><br>');
+//
+//parse_str($url_data['query'], $query);
+//print_r('WIDTH: ' . $query['width'] . '<br>HEIGHT: ' . $query['height'] . '<br><br>');
+//
+//$url_main =
+//    $url_data['scheme'] . '://' . $url_data['host'] . $url_data['path'] . '?resid=' . urlencode($query['resid']) . '&authkey=' . urlencode($query['authkey']);
+//
+//print_r('URL: <br>' . $images_data[0]['host'] . '<br>');
+//print_r($url_main);
+//?>
 
 
 </body>
@@ -48,7 +62,7 @@ print_r($url_main);
         $('#add_image_btn').on('click', function () {
             console.log('host2: empty');
 
-            let host = document.getElementById("host").value;
+            let host = $("#host").val();
 
             console.log('host: ' + host);
 
