@@ -3,7 +3,8 @@
 html, body {
     background-color: #d6e5b8;
     margin: 0;
-    padding: 0;
+    padding-left: 60px;
+    padding-right: 60px;
     border: 0;
 }
 
