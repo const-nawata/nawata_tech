@@ -1,23 +1,18 @@
 <div style="text-align: center;">
-
     <?php
-
     $file_content = file_get_contents('data.json');
-    $images_data = json_decode($file_content, true);
-
+    $data = json_decode($file_content, true);
+    $images_data = $data['images'];
     $count = count($images_data);
 
     for ($i = 0; $i < $count; $i++) {
-        $host = $images_data[0]['host'] . '&width=300';
+        $host = $images_data[$i]['host'] . '&width=300';
         ?>
         <img src="<?= $host ?>" alt="image00000" width="300">
         <?php
     }
     ?>
-
-
 </div>
-
 
 <?php
 /*

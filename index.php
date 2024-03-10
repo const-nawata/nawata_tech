@@ -16,7 +16,10 @@
 
 <?php
 if (!file_exists('data.json')) {
-    $images_data = [];
+    $images_data = [
+        'pass' => '0043',
+        'images' => []
+    ];
     file_put_contents('data.json', json_encode($images_data));
 }
 
