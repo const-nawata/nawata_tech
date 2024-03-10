@@ -10,7 +10,7 @@
 
 <div class="image-host">
     <label for="host">HOST</label>
-    <input type="text" id="host" name="host" size="90">
+    <input type="text" id="host" name="host" size="90" value="">
     <button type="button" id="add_image_btn">Додати</button>
 </div>
 
@@ -67,7 +67,7 @@ require_once 'pages/photo.php';
     $(document).ready(function () {
         $('#add_image_btn').on('click', function () {
             let host = $("#host").val();
-            console.log('host: ' + host);
+            // console.log('host: ' + host);
 
             $.ajax({
                 type: "GET",
@@ -76,11 +76,11 @@ require_once 'pages/photo.php';
                 success: function (data) {
                     if (data.result) {
                         $("#div_err").html("&nbsp;");
+                        $("#host").val("");
                         location.reload();
-                        console.log('New data');
                     } else {
-                        $("#div_err").html('Таке фото вже є');
-                        console.log('Old data');
+                        $("#div_err").html("Таке фото вже є");
+                        $("#host").val("");
                     }
                 },
                 error: function (msg) {
