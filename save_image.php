@@ -1,5 +1,5 @@
 <?php
-$file_content = file_get_contents('images.json');
+$file_content = file_get_contents('data.json');
 $images_data = json_decode($file_content, true);
 $url_data = parse_url($_GET['host']);
 parse_str($url_data['query'], $query);
@@ -14,4 +14,4 @@ $images_data[] = [
     'height' => $query['height'],
 ];
 
-file_put_contents('images.json', json_encode($images_data));
+file_put_contents('data.json', json_encode($images_data));

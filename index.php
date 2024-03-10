@@ -15,9 +15,9 @@
 </div>
 
 <?php
-if (!file_exists('images.json')) {
+if (!file_exists('data.json')) {
     $images_data = [];
-    file_put_contents('images.json', json_encode($images_data));
+    file_put_contents('data.json', json_encode($images_data));
 }
 
 require_once 'pages/photo.php';
@@ -27,7 +27,7 @@ require_once 'pages/photo.php';
 //$stack[] = "raspberry";
 //print_r($stack);
 //
-//$file_content = file_get_contents('images.json');
+//$file_content = file_get_contents('data.json');
 //$images_data = json_decode($file_content, true);
 //
 //print_r("<br><br>File: {$file_content}<br><br>");
