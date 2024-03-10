@@ -5,6 +5,48 @@
     <title>Nawata</title>
     <link rel="stylesheet" href="public/css/main.css" type="text/css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <style type="text/css">
+
+        .popup {
+            display: none;
+            position: fixed;
+            padding-top: 5px;
+            width: 1034px;
+            left: 50%;
+            margin-left: -547px;
+            height: 760px;
+            top: 10%;
+            background: rgba(202, 234, 239, 0.80);
+            border: 3px solid #0e3a8d;
+            z-index: 20;
+            text-align: center;
+        }
+
+        #popup:after {
+            position: fixed;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -2;
+        }
+
+        #popup:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(202, 234, 239, 0.80);
+            z-index: -1;
+        }
+    </style
+</head>
 <body>
 <div class="site-title">Наші фотки</div>
 
@@ -41,9 +83,33 @@ if (array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass']) {
 
 require_once 'pages/photo.php';
 ?>
+
+<button class="button" href="#" onclick="show('popup')">Button</button>
+
+<!-- This is what will be included inside the popup -->
+<div class="popup" id="popup">
+    <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=1024"
+         alt="image00000" width="1024">
+
+    <br><br>
+    <a href="#" onclick="hide('popup')">Close</a>
+</div>
+
 </body>
 
 <script type="text/javascript">
+    $ = function (id) {
+        return document.getElementById(id);
+    }
+
+    var show = function (id) {
+        $(id).style.display = 'block';
+    }
+    var hide = function (id) {
+        $(id).style.display = 'none';
+    }
+
+
     $(document).ready(function () {
         $('#add_image_btn').on('click', function () {
             let host = $("#host").val();
