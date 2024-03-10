@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="public/css/main.css" type="text/css"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <body>
-<div class="site-title">Our Photos</div>
+<div class="site-title">Наші фотки</div>
 
 <div class="image-host">
     <label for="host">HOST</label>
     <input type="text" id="host" name="host" size="90">
     <button type="button" id="add_image_btn">Додати</button>
 </div>
+
+<div class="photo-exists" id="div_err">&nbsp;</div>
 
 <?php
 if (!file_exists('data.json')) {
@@ -64,8 +66,6 @@ require_once 'pages/photo.php';
 <script type="text/javascript">
     $(document).ready(function () {
         $('#add_image_btn').on('click', function () {
-            console.log('host2: empty');
-
             let host = $("#host").val();
             console.log('host: ' + host);
 
@@ -73,10 +73,22 @@ require_once 'pages/photo.php';
                 type: "GET",
                 url: "save_image.php",
                 data: {host: host},
-                success: function () {
-                    location.reload();
+                success: function (data) {
+                    if (data.result) {
+                        $("#div_err").html("&nbsp;");
+                        location.reload();
+                        console.log('New data');
+                    } else {
+                        $("#div_err").html('Таке фото вже є');
+                        console.log('Old data');
+                    }
+                },
+                error: function (msg) {
+                    $("#div_err").html(msg);
+                    console.log(msg);
                 }
             });
+
         });
     });
 </script>

@@ -59,7 +59,7 @@ button:disabled {
 
 .image-host {
     margin-top: 10px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     width: 100%;
     color: #000000;
     font-size: 20px;
@@ -77,4 +77,16 @@ button:disabled {
     font-weight: bold;
     font-family: Arial, serif;
     text-align: center;
+}
+
+.photo-exists{
+    /*margin-top: 40px;*/
+    margin-bottom: 5px;
+    width: 100%;
+    color: #d90606;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    font-family: Arial, serif;
+    text-align: center;
+
 }
