@@ -10,7 +10,19 @@
 
 
 <?php
-if (array_key_exists('pass', $_GET) && $_GET['pass'] == '0043') {
+
+if (!file_exists('data.json')) {
+    $images_data = [
+        'pass' => '0043',
+        'images' => []
+    ];
+    file_put_contents('data.json', json_encode($images_data));
+}
+
+$file_content = file_get_contents('data.json');
+$data = json_decode($file_content, true);
+
+if (array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass']) {
     ?>
     <div class="image-host">
         <label for="host">HOST</label>
@@ -25,14 +37,6 @@ if (array_key_exists('pass', $_GET) && $_GET['pass'] == '0043') {
     ?>
     <div class="image-host"></div>
     <?php
-}
-
-if (!file_exists('data.json')) {
-    $images_data = [
-        'pass' => '0043',
-        'images' => []
-    ];
-    file_put_contents('data.json', json_encode($images_data));
 }
 
 require_once 'pages/photo.php';
