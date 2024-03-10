@@ -6,9 +6,11 @@
     $count = count($images_data);
 
     for ($i = 0; $i < $count; $i++) {
-        $host = $images_data[$i]['host'] . '&width=300';
+        $url =
+            $images_data[$i]['scheme'] . '://' . $images_data[$i]['host'] . $images_data[$i]['path'] . '?resid=' .
+            $images_data[$i]['resid'] . '&authkey=' . $images_data[$i]['authkey'] . '&width=300';
         ?>
-        <img src="<?= $host ?>" alt="image00000" width="300">
+        <img src="<?= $url ?>" alt="image00000" width="300">
         <?php
     }
     ?>
