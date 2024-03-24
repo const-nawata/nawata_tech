@@ -9,7 +9,7 @@
 
     <style type="text/css">
 
-        .expandedImg {
+        .expandedDiv {
             display: none;
             position: fixed;
             padding-top: 5px;
@@ -24,7 +24,7 @@
             text-align: center;
         }
 
-        #expandedImg:after {
+        #expandedDiv:after {
             position: fixed;
             content: "";
             top: 0;
@@ -35,7 +35,7 @@
             z-index: -2;
         }
 
-        #expandedImg:before {
+        #expandedDiv:before {
             position: absolute;
             content: "";
             top: 0;
@@ -84,10 +84,10 @@ if (array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass']) {
 require_once 'pages/photo.php';
 ?>
 
-<!-- This is what will be included inside the expandedImg popup -->
-<div class="expandedImg" id="expandedImg">
+<!-- This is what will be included inside the expandedDiv popup -->
+<div class="expandedDiv" id="expandedDiv">
     <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=1024"
-         alt="image00000" width="1024">
+         alt="image00000" width="1024" id="expandedImg">
 
     <br/><br/>
     <a href="#" onclick="hideExpanded()">Close</a>
@@ -96,6 +96,15 @@ require_once 'pages/photo.php';
 </body>
 
 <script type="text/javascript">
+    jgt = function (id) {
+        return document.getElementById(id);
+    }
+    let showExpanded = function () {
+        jgt("expandedDiv").style.display = 'block';
+    }
+    let hideExpanded = function () {
+        jgt("expandedDiv").style.display = 'none';
+    }
 
 
     $(document).ready(function () {
@@ -125,16 +134,6 @@ require_once 'pages/photo.php';
         });
     });
 
-
-    jgt = function (id) {
-        return document.getElementById(id);
-    }
-    let showExpanded = function () {
-        jgt("expandedImg").style.display = 'block';
-    }
-    let hideExpanded = function () {
-        jgt("expandedImg").style.display = 'none';
-    }
 </script>
 
 </html>
