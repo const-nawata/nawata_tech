@@ -44,9 +44,24 @@ require_once 'pages/photo.php';
 
 <!-- This is what will be included inside the expandedDiv popup -->
 <div class="expandedDiv" id="expandedDiv">
-    <img src="./public/img/wait.jpg" alt="image00000" width="1024" id="expandedImg">
-    <br/><br/>
-    <a href="#" id="closeExpanded">Close</a>
+    <div style="text-align: right;">
+        <button class="close-button" type="button" id="closeExpanded">
+            <span>&times;</span>
+        </button>
+    </div>
+
+    <div style="text-align: center;">
+        <img src="./public/img/wait.jpg" alt="image00000" width="1024" id="expandedImg">
+    </div>
+
+    <?php /*?>
+
+    <div style="text-align: left;">
+        <span>Description of the Photo</span><span>Date</span>
+    </div>
+
+    <?php */ ?>
+
 </div>
 
 </body>

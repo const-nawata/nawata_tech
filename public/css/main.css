@@ -98,7 +98,7 @@ div.ourImages {
 div.expandedDiv {
     display: none;
     position: fixed;
-    padding-top: 5px;
+    /*padding-top: 5px;*/
     width: 1034px;
     left: 50%;
     margin-left: -547px;
@@ -107,7 +107,7 @@ div.expandedDiv {
     background: rgba(202, 234, 239, 0.80);
     border: 3px solid #0e3a8d;
     z-index: 20;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 div#expandedDiv:after {
@@ -130,4 +130,16 @@ div#expandedDiv:before {
     right: 0;
     background: rgba(202, 234, 239, 0.80);
     z-index: -1;
+}
+
+/*padding trbl vh*/
+button.close-button {
+    padding: 1px 6px 0 6px;
+    border-radius: 50%;
+    background-color: #770937;
+    color: #FFF;
+}
+
+button.close-button:HOVER {
+    background-color: #b95680;
 }
