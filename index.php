@@ -9,7 +9,7 @@
 
     <style type="text/css">
 
-        .popup {
+        .expandedImg {
             display: none;
             position: fixed;
             padding-top: 5px;
@@ -24,7 +24,7 @@
             text-align: center;
         }
 
-        #popup:after {
+        #expandedImg:after {
             position: fixed;
             content: "";
             top: 0;
@@ -35,7 +35,7 @@
             z-index: -2;
         }
 
-        #popup:before {
+        #expandedImg:before {
             position: absolute;
             content: "";
             top: 0;
@@ -84,28 +84,18 @@ if (array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass']) {
 require_once 'pages/photo.php';
 ?>
 
-<!-- This is what will be included inside the popup -->
-<div class="popup" id="expandedImg">
+<!-- This is what will be included inside the expandedImg popup -->
+<div class="expandedImg" id="expandedImg">
     <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=1024"
          alt="image00000" width="1024">
 
     <br/><br/>
-    <a href="#" onclick="hide('expandedImg')">Close</a>
+    <a href="#" onclick="hideExpanded()">Close</a>
 </div>
 
 </body>
 
 <script type="text/javascript">
-    $ = function (id) {
-        return document.getElementById(id);
-    }
-
-    let show = function () {
-        $("expandedImg").style.display = 'block';
-    }
-    let hide = function () {
-        $("expandedImg").style.display = 'none';
-    }
 
 
     $(document).ready(function () {
@@ -132,9 +122,19 @@ require_once 'pages/photo.php';
                     console.log(msg);
                 }
             });
-
         });
     });
+
+
+    jgt = function (id) {
+        return document.getElementById(id);
+    }
+    let showExpanded = function () {
+        jgt("expandedImg").style.display = 'block';
+    }
+    let hideExpanded = function () {
+        jgt("expandedImg").style.display = 'none';
+    }
 </script>
 
 </html>
