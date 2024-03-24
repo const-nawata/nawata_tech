@@ -1,4 +1,4 @@
-<div style="text-align: center;" onclick="showExpanded();" class="ourImg">
+<div class="ourImages">
     <?php
     $file_content = file_get_contents('data.json');
     $data = json_decode($file_content, true);
@@ -10,7 +10,7 @@
             $images_data[$i]['scheme'] . '://' . $images_data[$i]['host'] . $images_data[$i]['path'] . '?resid=' .
             $images_data[$i]['resid'] . '&authkey=' . $images_data[$i]['authkey'] . '&width=300';
         ?>
-        <img src="<?= $url ?>" alt="image00000" width="300">
+        <img src="<?= $url ?>" alt="image00000" width="300" onclick="showExpanded();">
         <?php
     }
     ?>
