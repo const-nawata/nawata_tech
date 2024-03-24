@@ -10,7 +10,8 @@
             $images_data[$i]['scheme'] . '://' . $images_data[$i]['host'] . $images_data[$i]['path'] . '?resid=' .
             $images_data[$i]['resid'] . '&authkey=' . $images_data[$i]['authkey'] . '&width=300';
         ?>
-        <img src="<?= $url ?>" alt="image00000" width="300" onclick="showExpanded();">
+        <!--        <img src="--><?php //= $url ?><!--" alt="image00000" width="300" onclick="showExpanded();" class="imgItem">-->
+        <img src="<?= $url ?>" alt="image00000" width="300" class="imgItem">
         <?php
     }
     ?>

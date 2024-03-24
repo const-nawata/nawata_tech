@@ -44,11 +44,9 @@ require_once 'pages/photo.php';
 
 <!-- This is what will be included inside the expandedDiv popup -->
 <div class="expandedDiv" id="expandedDiv">
-    <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=1024"
-         alt="image00000" width="1024" id="expandedImg">
-
+    <img src="./public/img/wait.jpg" alt="image00000" width="1024" id="expandedImg">
     <br/><br/>
-    <a href="#" onclick="hideExpanded()">Close</a>
+    <a href="#" id="closeExpanded">Close</a>
 </div>
 
 </body>
@@ -58,15 +56,15 @@ require_once 'pages/photo.php';
         return document.getElementById(id);
     }
     let showExpanded = function () {
-        jgt("expandedDiv").style.display = 'block';
+        jgt("expandedDiv").style.display = "block";
     }
     let hideExpanded = function () {
-        jgt("expandedDiv").style.display = 'none';
+        jgt("expandedDiv").style.display = "none";
     }
 
 
     $(document).ready(function () {
-        $('#add_image_btn').on('click', function () {
+        $('#add_image_btn').on("click", function () {
             let host = $("#host").val();
             // console.log('host: ' + host);
 
@@ -90,6 +88,21 @@ require_once 'pages/photo.php';
                 }
             });
         });
+
+        $('.imgItem').on('click', function () {
+            let src = this.src;
+            src = src.replace("width=300", "width=1024");
+            // console.log('src: ' + src);
+            $("#expandedImg").attr("src", src);
+            showExpanded();
+        });
+
+
+        $('#closeExpanded').on("click", function () {
+            hideExpanded()
+            $("#expandedImg").attr("src", "./public/img/wait.jpg");
+        });
+
     });
 
 </script>
