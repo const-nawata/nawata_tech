@@ -1,4 +1,4 @@
-<div style="text-align: center;" onclick="show('popup')">
+<div style="text-align: center;" onclick="show('expandedImg')">
     <?php
     $file_content = file_get_contents('data.json');
     $data = json_decode($file_content, true);

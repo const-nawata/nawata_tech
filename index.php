@@ -85,12 +85,12 @@ require_once 'pages/photo.php';
 ?>
 
 <!-- This is what will be included inside the popup -->
-<div class="popup" id="popup">
+<div class="popup" id="expandedImg">
     <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=1024"
          alt="image00000" width="1024">
 
     <br/><br/>
-    <a href="#" onclick="hide('popup')">Close</a>
+    <a href="#" onclick="hide('expandedImg')">Close</a>
 </div>
 
 </body>
