@@ -84,14 +84,12 @@ if (array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass']) {
 require_once 'pages/photo.php';
 ?>
 
-<button class="button" href="#" onclick="show('popup')">Button</button>
-
 <!-- This is what will be included inside the popup -->
 <div class="popup" id="popup">
     <img src="https://onedrive.live.com/embed?resid=E56760D01EE8AF8D%21407712&authkey=%21ADJwf_qNiN5H5_c&width=1024"
          alt="image00000" width="1024">
 
-    <br><br>
+    <br/><br/>
     <a href="#" onclick="hide('popup')">Close</a>
 </div>
 
@@ -102,10 +100,10 @@ require_once 'pages/photo.php';
         return document.getElementById(id);
     }
 
-    var show = function (id) {
+    let show = function (id) {
         $(id).style.display = 'block';
     }
-    var hide = function (id) {
+    let hide = function (id) {
         $(id).style.display = 'none';
     }
 
