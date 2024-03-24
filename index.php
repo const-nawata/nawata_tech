@@ -90,8 +90,7 @@ require_once 'pages/photo.php';
         });
 
         $('.imgItem').on('click', function () {
-            let src = this.src;
-            src = src.replace("width=300", "width=1024");
+            let src = this.src.replace("width=300", "width=1024");
             // console.log('src: ' + src);
             $("#expandedImg").attr("src", src);
             showExpanded();
