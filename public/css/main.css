@@ -143,3 +143,23 @@ button.close-button {
 button.close-button:HOVER {
     background-color: #b95680;
 }
+
+.container {
+    border: 2px solid rgba(202, 234, 239, 0.80);
+    width: 300px;
+    position: relative;
+    float: left;
+}
+
+.tag {
+    height: 20px;
+    float: left;
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    z-index: 1000;
+    background-color: #770937;
+    padding: 0 3px 0 3px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
