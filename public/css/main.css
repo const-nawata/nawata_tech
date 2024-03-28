@@ -144,15 +144,15 @@ button.close-button:HOVER {
     background-color: #b95680;
 }
 
-.container {
+div.del-btn {
     border: 2px solid rgba(202, 234, 239, 0.80);
     width: 300px;
     position: relative;
     float: left;
 }
 
-.tag {
-    height: 20px;
+div.del-symbol {
+    /*height: 22px;*/
     float: left;
     position: absolute;
     right: 0;
@@ -162,4 +162,6 @@ button.close-button:HOVER {
     padding: 0 3px 0 3px;
     color: #FFFFFF;
     font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
 }
