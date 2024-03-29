@@ -116,11 +116,38 @@ require_once 'pages/photo.php';
         });
 
         $('.del-btn').on('click', function () {
-            let image_id = this.id.substring(3);
+            let sure = confirm("Впевнений?");
 
-            // alert('Test message');
+            if (sure) {
+                let img_ind = this.id.substring(3);
+                console.log('img_ind: ' + img_ind);
 
-            console.log('Image: ' + image_id);
+                $.ajax({
+                    type: "GET",
+                    url: "delete_image.php",
+                    data: {index: img_ind},
+                    success: function (data) {
+                        if (data.result) {
+                            $("#div_err").html("&nbsp;");
+                            $("#host").val("");
+                            location.reload();
+                        } else {
+                            $("#div_err").html("Щось пішло не так.");
+                            $("#host").val("");
+                        }
+                    },
+                    error: function (msg) {
+                        $("#div_err").html(msg);
+                        console.log(msg);
+                    }
+                });
+
+
+            } else {
+                console.log('Image deletion denied!');
+            }
+
+
         });
     });
 
