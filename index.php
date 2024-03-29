@@ -106,17 +106,22 @@ require_once 'pages/photo.php';
 
         $('.imgItem').on('click', function () {
             let src = this.src.replace("width=300", "width=1024");
-            // console.log('src: ' + src);
             $("#expandedImg").attr("src", src);
             showExpanded();
         });
-
 
         $('#closeExpanded').on("click", function () {
             hideExpanded()
             $("#expandedImg").attr("src", "./public/img/wait.jpg");
         });
 
+        $('.del-btn').on('click', function () {
+            let image_id = this.id.substring(3);
+
+            // alert('Test message');
+
+            console.log('Image: ' + image_id);
+        });
     });
 
 </script>
