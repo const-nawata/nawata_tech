@@ -1,5 +1,7 @@
 @CHARSET "UTF-8";
 
+/*padding trbl vh*/
+
 html, body {
     background-color: #d6e5b8;
     margin: 0;
@@ -88,11 +90,10 @@ button:disabled {
     /*font-weight: bold;*/
     font-family: Arial, serif;
     text-align: center;
-
 }
 
 div.ourImages {
-    /*text-align: center;*/
+    text-align: center;
 }
 
 div.expandedDiv {
@@ -107,7 +108,7 @@ div.expandedDiv {
     background: rgba(202, 234, 239, 0.80);
     border: 3px solid #0e3a8d;
     z-index: 20;
-    /*text-align: center;*/
+    text-align: center;
 }
 
 div#expandedDiv:after {
@@ -132,7 +133,6 @@ div#expandedDiv:before {
     z-index: -1;
 }
 
-/*padding trbl vh*/
 button.close-button {
     padding: 1px 6px 0 6px;
     border-radius: 50%;
@@ -157,7 +157,7 @@ div.del-btn {
     position: absolute;
     right: 0;
     bottom: 4px;
-    z-index: 1000;
+    z-index: 10;
     background-color: #770937;
     padding: 0 3px 0 3px;
     color: #FFFFFF;

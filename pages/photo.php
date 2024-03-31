@@ -12,18 +12,26 @@
             $images_data[$i]['scheme'] . '://' . $images_data[$i]['host'] . $images_data[$i]['path'] . '?resid=' .
             $images_data[$i]['resid'] . '&authkey=' . $images_data[$i]['authkey'] . '&width=300';
 
-//        if($is_admin) {
-
-        ?>
-        <div class="del-left-part">
-            <div class="del-btn" id="img<?= $i ?>">&#10006;</div>
-            <img src="<?= $url ?>" alt="image00000" width="300" class="imgItem">
-        </div>
-        <?php
-
+        if ($is_admin) {
+            ?>
+            <div class="del-left-part">
+                <div class="del-btn" id="img<?= $i ?>">&#10006;</div>
+                <?php
+                createImage($url);
+                ?>
+            </div>
+            <?php
+        } else {
+            createImage($url);
+        }
     }
-
-    //    }
     ?>
 </div>
+<?php
 
+function createImage($url)
+{
+    ?>
+    <img src="<?= $url ?>" alt="image00000" width="300" class="imgItem">
+    <?php
+}
