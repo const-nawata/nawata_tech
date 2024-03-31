@@ -144,14 +144,14 @@ button.close-button:HOVER {
     background-color: #b95680;
 }
 
-div.del-btn {
+div.del-left-part {
     border: 2px solid rgba(202, 234, 239, 0.80);
-    width: 300px;
+    /*width: 300px;*/
     position: relative;
     float: left;
 }
 
-div.del-symbol {
+div.del-btn {
     /*height: 22px;*/
     float: left;
     position: absolute;

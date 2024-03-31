@@ -10,6 +10,8 @@
 <div class="site-title">Наші фотки</div>
 
 <?php
+global $is_admin;
+
 
 if (!file_exists('data.json')) {
     $images_data = [
@@ -21,8 +23,9 @@ if (!file_exists('data.json')) {
 
 $file_content = file_get_contents('data.json');
 $data = json_decode($file_content, true);
+$is_admin = array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass'];
 
-if (array_key_exists('pass', $_GET) && $_GET['pass'] == $data['pass']) {
+if ($is_admin) {
     ?>
     <div class="image-host">
         <label for="host">HOST</label>
